@@ -1,0 +1,16 @@
+spring:
+    application:
+        name: employees
+    devtools:
+        livereload:
+            enabled: true
+    cloud:
+        openfeign:
+            client:
+                config:
+                    rest-api-example:
+                        url: https://dummy.restapiexample.com/api/v1
+                        connectTimeout: 5000
+                        readTimeout: 5000
+                        loggerLevel: full
+
