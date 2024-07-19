@@ -1,6 +1,8 @@
 package com.amaris.tec.assessment.employees.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * RestApiExampleDTO<T>: Represents th.e reponse of restapiexample.com.
@@ -8,7 +10,9 @@ import lombok.Data;
  * @param <T> Is the object included on data.
  * @author Francisco Javier Guerrero Peláez
  */
-@Data
+@Getter
+@Setter
+@ToString
 public class RestApiExampleResponseDTO<T> {
     /** status. */
     private String status;

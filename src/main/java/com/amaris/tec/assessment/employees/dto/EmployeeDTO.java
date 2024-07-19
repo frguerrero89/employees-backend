@@ -2,13 +2,17 @@ package com.amaris.tec.assessment.employees.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * EmployeeDTO: Representation of an employee.
  * @author Francisco Javier Guerrero Peláez.
  */
-@Data
+@Getter
+@Setter
+@ToString
 public class EmployeeDTO {
     /** id. */
     private int id;
