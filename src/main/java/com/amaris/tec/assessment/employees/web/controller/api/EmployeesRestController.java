@@ -13,7 +13,6 @@ import com.amaris.tec.assessment.employees.dto.EmployeeDTO;
 import com.amaris.tec.assessment.employees.service.EmployeeService;
 
 import feign.FeignException;
-import feign.FeignException.FeignClientException;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 

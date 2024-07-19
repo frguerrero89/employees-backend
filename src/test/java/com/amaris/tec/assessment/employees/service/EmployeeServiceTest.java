@@ -22,7 +22,7 @@ import feign.Request;
 import feign.RequestTemplate;
 
 @SpringBootTest
-public class EmployeeServiceTest {
+class EmployeeServiceTest {
 
     @Mock
     RestApiExampleClient client;
