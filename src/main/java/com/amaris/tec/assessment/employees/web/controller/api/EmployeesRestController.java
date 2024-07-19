@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.amaris.tec.assessment.employees.dto.EmployeeDTO;
 import com.amaris.tec.assessment.employees.service.EmployeeService;
 
+import feign.FeignException;
 import feign.FeignException.FeignClientException;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
@@ -44,11 +45,9 @@ public class EmployeesRestController {
         ResponseEntity<EmployeeDTO> response;
         try {
             response = ResponseEntity.ok(service.getEmployee(id));
-        } catch (FeignClientException ex) {
+        } catch (FeignException ex) {
             response = ResponseEntity.status(ex.status()).build();
-        } catch (Exception ex) {
-            response = ResponseEntity.internalServerError().build();
-        }
+        } 
         return response;
     }
 
@@ -64,11 +63,9 @@ public class EmployeesRestController {
         ResponseEntity<List<EmployeeDTO>> response;
         try {
             response = ResponseEntity.ok(service.getEmployees());
-        } catch (FeignClientException ex) {
+        } catch (FeignException ex) {
             response = ResponseEntity.status(ex.status()).build();
-        } catch (Exception ex) {
-            response = ResponseEntity.internalServerError().build();
-        }
+        } 
         return response;
     }
 
