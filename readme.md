@@ -29,3 +29,10 @@ While most of the inheritance is fine, it also inherits unwanted elements like `
 To prevent this, the project POM contains empty overrides for these elements.
 If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
 
+
+### About project instalation
+For the correct installation or compilation of the project, that is, when executing the command ```mvn -U clean install```, an api key obtained from the NATIONAL VULNERABILITY DATABASE may be required; This is because the project contains the OWASP vulnerability checking extension (OWASP Dependency-Check) as part of good programming practices.
+
+To obtain the API key, you must access the following link: [NVD](https://nvd.nist.gov/developers/request-an-api-key), fill out the form and activate. Please note that the key will only be available once after activation.
+
+Once you have the key string, please add it to the pom file, in build -> plugins -><!-- OWASP security inspection --> in the nvdApiKey property, once this is done, you can compile the project, and once it is Compiling could take a while while the plugin databases are updated, this being the only time this will happen.
