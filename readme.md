@@ -35,4 +35,4 @@ For the correct installation or compilation of the project, that is, when execut
 
 To obtain the API key, you must access the following link: [NVD](https://nvd.nist.gov/developers/request-an-api-key), fill out the form and activate. Please note that the key will only be available once after activation.
 
-Once you have the key string, please add it to the pom file, in build -> plugins -><!-- OWASP security inspection --> in the nvdApiKey property, once this is done, you can compile the project, and once it is Compiling could take a while while the plugin databases are updated, this being the only time this will happen.
+Once you have the key string, please add it to the pom file, in build -> plugins -> '<!-- OWASP security inspection -->' in the nvdApiKey property, once this is done, you can compile the project, and once it is Compiling could take a while while the plugin databases are updated, this being the only time this will happen.
