@@ -136,7 +136,7 @@
 				<artifactId>dependency-check-maven</artifactId>
 				<version>${owasp.version}</version>
 				<configuration>
-					<nvdApiKey>d637519f-6436-4a3c-af37-a27209e41830</nvdApiKey>
+					<nvdApiKey></nvdApiKey>
 				</configuration>
 				<executions>
 					<execution>

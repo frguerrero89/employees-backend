@@ -1,4 +1,4 @@
-package com.amaris.tec.assessment.employees.controller;
+package com.amaris.tec.assessment.employees.web.controller.api;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/employees")
 @RequiredArgsConstructor
-public class EmployeesController {
+public class EmployeesRestController {
 
     /**
      * Service that handles employees logic.
@@ -41,13 +41,15 @@ public class EmployeesController {
     @GetMapping("/byId/{id}")
     @ApiResponse(description = "Returns an employee by id")
     public ResponseEntity<EmployeeDTO> getEmployeeById(@PathVariable String id) {
+        ResponseEntity<EmployeeDTO> response;
         try {
-            return ResponseEntity.ok(service.getEmployee(id));
+            response = ResponseEntity.ok(service.getEmployee(id));
         } catch (FeignClientException ex) {
-            return ResponseEntity.status(ex.status()).build();
-        } catch (Exception ex){
-            return ResponseEntity.internalServerError().build();
+            response = ResponseEntity.status(ex.status()).build();
+        } catch (Exception ex) {
+            response = ResponseEntity.internalServerError().build();
         }
+        return response;
     }
 
     /**
@@ -59,13 +61,15 @@ public class EmployeesController {
     @GetMapping("")
     @ApiResponse(description = "Returns a list of employees")
     public ResponseEntity<List<EmployeeDTO>> getEmployees() {
+        ResponseEntity<List<EmployeeDTO>> response;
         try {
-            return ResponseEntity.ok(service.getEmployees());
+            response = ResponseEntity.ok(service.getEmployees());
         } catch (FeignClientException ex) {
-            return ResponseEntity.status(ex.status()).build();
-        } catch (Exception ex){
-            return ResponseEntity.internalServerError().build();
+            response = ResponseEntity.status(ex.status()).build();
+        } catch (Exception ex) {
+            response = ResponseEntity.internalServerError().build();
         }
+        return response;
     }
 
 }

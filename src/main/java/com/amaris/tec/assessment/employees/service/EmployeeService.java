@@ -33,7 +33,7 @@ public class EmployeeService {
      * @return Employee data object.
      */
     public EmployeeDTO getEmployee(String id) {
-        EmployeeDTO employeeDTO = null;
+        EmployeeDTO employeeDTO;
         try {
             var response = client.getEmployeeById(id);
             employeeDTO = response.getData();
@@ -43,7 +43,6 @@ public class EmployeeService {
             log.error(ex.getMessage());
             throw ex;
         }
-
         return employeeDTO;
     }
 
@@ -53,7 +52,7 @@ public class EmployeeService {
      * @return List of employees.
      */
     public List<EmployeeDTO> getEmployees() {
-        List<EmployeeDTO> employees = null;
+        List<EmployeeDTO> employees;
         try {
             var response = client.getEmployees();
             employees = response.getData();
